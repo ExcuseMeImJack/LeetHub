@@ -24,5 +24,3 @@ var isValid = function(s) {
     if(isFalse === false) return false;
     else return stack.length === 0
 };
-
-console.log(isValid("]"))
