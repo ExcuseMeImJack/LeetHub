@@ -31,7 +31,7 @@ var isAnagram = function(s, t) {
     } else {
         longerInput = bLetters;
     }
-    console.log(longerInput)
+
     for(let key in longerInput) {
         if(key in bLetters) {
             if(fLetters[key] !== bLetters[key]){
