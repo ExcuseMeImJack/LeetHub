@@ -3,17 +3,22 @@
  * @return {number}
  */
 var calPoints = function(operations) {
-    const stack = [];
-    let sum = 0;
+    let scores = [];
     operations.forEach(op => {
-        if(op === '+') stack.push((stack[stack.length - 1]) + (stack[stack.length - 2]));
-        else if(op === 'D') stack.push((stack[stack.length - 1]) * 2);
-        else if(op === 'C') stack.pop();
-        else stack.push(parseInt(op))
-    })
+        if(op === '+'){
+            scores.push(scores[scores.length - 1] + scores[scores.length - 2])
+        } else if(op === 'D'){
+            scores.push(scores[scores.length - 1] * 2)
+        } else if(op === 'C'){
+            scores.pop();
+        } else {
+            scores.push(parseInt(op))
+        }
+    });
     
-    stack.forEach(num => {
-        sum += num;
+    let sum = 0;
+    scores.forEach(score => {
+        sum += score;
     })
     return sum;
 };
