@@ -4,7 +4,8 @@
  */
 var isValid = function(s) {
     const stack = [];
-    let isFalse;
+
+    
     const acceptedChars = {
         ')' : '(',
         '}' : '{',
@@ -15,7 +16,8 @@ var isValid = function(s) {
     
     for(let i = 0; i < inputArr.length; i++){
         let char = inputArr[i];
-        if(!acceptedChars.hasOwnProperty(char)){
+        
+        if(!acceptedChars[char]){
             stack.push(char);
         } else if(stack.length === 0 || stack[stack.length - 1] !== acceptedChars[char]){
             return false;
