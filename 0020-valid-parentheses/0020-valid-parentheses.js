@@ -12,15 +12,17 @@ var isValid = function(s) {
     }
     
     const inputArr = s.split('');
-    inputArr.forEach(char => {
+    
+    for(let i = 0; i < inputArr.length; i++){
+        let char = inputArr[i];
         if(!acceptedChars.hasOwnProperty(char)){
             stack.push(char);
         } else if(stack.length === 0 || stack[stack.length - 1] !== acceptedChars[char]){
-            isFalse = false;
+            return false;
         } else {
             stack.pop()
         }
-    })
-    if(isFalse === false) return false;
-    else return stack.length === 0
+    }
+
+    return stack.length === 0
 };
