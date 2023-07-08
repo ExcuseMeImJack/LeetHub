@@ -7,7 +7,7 @@ var containsNearbyDuplicate = function(nums, k) {
     // Return (true) if there are two DISTINCT INDICES i and j in the array that nums[i] == nums[j] and math.abs(i - j) <= k
     for(let i = 0; i < nums.length; i++){
         for(let j = i + 1; j < nums.length; j++){
-            if(nums[i] == nums[j] && Math.abs(i - j) <= k) return true;
+            if(nums[i] === nums[j] && Math.abs(i - j) <= k) return true;
         }
     }
     return false;
