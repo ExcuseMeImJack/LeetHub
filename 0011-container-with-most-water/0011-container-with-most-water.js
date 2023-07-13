@@ -8,11 +8,14 @@ var maxArea = function(height) {
     let right = height.length - 1;
     
     while(left < right){
-        let shorter = Math.min(height[right], height[left]);
+        let heightLeft = height[left];
+        let heightRight = height[right];
+        let shorter = Math.min(heightRight, heightLeft);
         let area = (right - left) * shorter;
+        
         maxWater = Math.max(maxWater, area);
         
-        if(height[left] >= height[right]){
+        if(heightLeft >= heightRight){
             right -= 1;
         } else {
             left += 1;
